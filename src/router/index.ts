@@ -4,7 +4,7 @@ import ViewHome from '../views/ViewHome.vue';
 import ViewNotFound from '../views/ViewNotFound.vue';
 import ViewPosts from '../views/ViewPosts.vue';
 
-export const router = createRouter({
+export default createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
