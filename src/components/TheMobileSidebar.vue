@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import logo from '../assets/logo.svg';
-import { router } from '../router';
+import router from '../router';
 import { useCommonStore } from '../stores/commonStore';
 
 type SidebarLink = {
@@ -17,6 +17,14 @@ const sidebarLinks: SidebarLink[] = [
 router.beforeEach(() => {
   commonStore.closeMobileSidebar();
   return true;
+});
+
+commonStore.$subscribe((mutation, state) => {
+  if (state.isMobileSidebarOpen) {
+    document.body.classList.add('noScroll');
+  } else {
+    document.body.classList.remove('noScroll');
+  }
 });
 </script>
 

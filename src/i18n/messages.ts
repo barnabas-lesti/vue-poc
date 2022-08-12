@@ -4,7 +4,7 @@ type Messages = {
   };
 };
 
-export const messages = {
+export default {
   en: {
     'mobileSidebar.links.home': 'Home',
     'mobileSidebar.links.posts': 'Posts',
