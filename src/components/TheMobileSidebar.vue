@@ -8,10 +8,10 @@ type SidebarLink = {
   labelKey: string;
 };
 
+const NO_SCROLL_CLASS_NAME = 'no-scroll';
 const commonStore = useCommonStore();
 const sidebarLinks: SidebarLink[] = [
   { name: 'home', labelKey: 'mobileSidebar.links.home' },
-  { name: 'posts', labelKey: 'mobileSidebar.links.posts' },
 ];
 
 router.beforeEach(() => {
@@ -21,9 +21,9 @@ router.beforeEach(() => {
 
 commonStore.$subscribe((mutation, state) => {
   if (state.isMobileSidebarOpen) {
-    document.body.classList.add('noScroll');
+    document.body.classList.add(NO_SCROLL_CLASS_NAME);
   } else {
-    document.body.classList.remove('noScroll');
+    document.body.classList.remove(NO_SCROLL_CLASS_NAME);
   }
 });
 </script>
