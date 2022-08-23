@@ -1,6 +1,38 @@
-# vue-poc
+# Vue POC
 
-This template should help get you started developing with Vue 3 in Vite.
+Example Vue 3 application to test the framework features.
+
+## Project Setup
+
+### Install dependencies
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+```sh
+npm run dev
+```
+
+### Run Unit Tests
+```sh
+TBD
+```
+
+### Lint
+```sh
+npm run lint
+```
+
+### Type-Check, Compile and Minify for Production
+```sh
+npm run build
+```
+
+### Start a production server (after the above)
+```sh
+TBD
+```
 
 ## Recommended IDE Setup
 
@@ -16,37 +48,3 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
     1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
     2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```

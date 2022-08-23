@@ -1,13 +1,25 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
+/**
+ * Common store factory function.
+ */
 export const useCommonStore = defineStore('common', () => {
+  /**
+   * Open state indicator for the mobile sidebar.
+   */
   const isMobileSidebarOpen = ref(false);
 
+  /**
+   * Sets the state `isMobileSidebarOpen` to `true`.
+   */
   function openMobileSidebar() {
     isMobileSidebarOpen.value = true;
   }
 
+  /**
+   * Sets the state `isMobileSidebarOpen` to `false`.
+   */
   function closeMobileSidebar() {
     isMobileSidebarOpen.value = false;
   }
