@@ -1,20 +1,21 @@
 <script setup lang="ts">
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
+import { RouteNames } from '../../router';
 </script>
 
 <template>
-  <footer class="TheFooter">
-    <RouterLink :to="{ name: 'home' }">
-      <img class="TheFooter__logo" :src="logo" alt="Logo" />
-    </RouterLink>
-    <div class="TheFooter__copyright">
+  <footer class="layout-footer">
+    <router-link :to="{ name: RouteNames.HOME }">
+      <img class="logo" :src="logo" :alt="$t('footer.logoAltText')" />
+    </router-link>
+    <div class="copyright">
       {{ $t('footer.copyright') }}
     </div>
   </footer>
 </template>
 
-<style lang="scss">
-.TheFooter {
+<style scoped lang="scss">
+.layout-footer {
   flex-shrink: 0;
   background-color: #e5e5e5;
   display: flex;
@@ -23,12 +24,12 @@ import logo from '../assets/logo.svg';
   padding: 1rem;
   box-sizing: border-box;
 
-  &__logo {
+  .logo {
     height: 1.4rem;
     margin-bottom: 1rem;
   }
 
-  &__copyright {
+  .copyright {
     color: #727272;
     font-size: 0.8rem;
   }

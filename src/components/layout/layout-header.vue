@@ -1,25 +1,26 @@
 <script setup lang="ts">
-import logo from '../assets/logo.svg';
-import { useCommonStore } from '../stores/commonStore';
+import logo from '../../assets/logo.svg';
+import { RouteNames } from '../../router';
+import { useCommonStore } from '../../stores/common';
 
 const commonStore = useCommonStore();
 </script>
 
 <template>
-  <header class="TheHeader">
+  <header class="layout-header">
     <span
-      class="TheHeader__mobileSidebarIcon material-icons"
+      class="mobile-sidebar-icon material-icons"
       @click="commonStore.openMobileSidebar()"
       >menu</span
     >
-    <RouterLink :to="{ name: 'home' }">
-      <img class="TheHeader__logo" :src="logo" alt="Logo" />
-    </RouterLink>
+    <router-link :to="{ name: RouteNames.HOME }">
+      <img class="logo" :src="logo" :alt="$t('header.logoAltText')" />
+    </router-link>
   </header>
 </template>
 
-<style lang="scss">
-.TheHeader {
+<style scoped lang="scss">
+.layout-header {
   position: sticky;
   top: 0;
   left: 0;
@@ -32,13 +33,13 @@ const commonStore = useCommonStore();
   display: flex;
   align-items: center;
 
-  &__mobileSidebarIcon {
+  .mobile-sidebar-icon {
     font-size: 2rem;
     display: block;
     margin: 0.5rem;
   }
 
-  &__logo {
+  .logo {
     height: 1.4rem;
     display: block;
     margin: 0.5rem;

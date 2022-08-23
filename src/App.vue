@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import TheFooter from './components/TheFooter.vue';
-import TheHeader from './components/TheHeader.vue';
-import TheMobileSidebar from './components/TheMobileSidebar.vue';
+import LayoutFooter from './components/layout/layout-footer.vue';
+import LayoutHeader from './components/layout/layout-header.vue';
+import LayoutMobileSidebar from './components/layout/layout-mobile-sidebar.vue';
 </script>
 
 <template>
-  <div class="App">
-    <TheHeader />
-    <TheMobileSidebar />
-    <div class="App__content">
-      <RouterView />
+  <div class="app">
+    <layout-header />
+    <layout-mobile-sidebar />
+    <div class="content">
+      <router-view />
     </div>
-    <TheFooter />
+    <layout-footer />
   </div>
 </template>
 
-<style lang="scss">
-.App {
+<style scoped lang="scss">
+.app {
   height: 100%;
   display: flex;
   flex-direction: column;
 
-  &__content {
+  .content {
     flex: 1 0 auto;
     margin: 1rem;
   }
