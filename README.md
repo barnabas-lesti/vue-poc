@@ -31,7 +31,7 @@ npm run build
 
 ### Start a production server (after the above)
 ```sh
-TBD
+npm run prod
 ```
 
 ## Recommended IDE Setup
