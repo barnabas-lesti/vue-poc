@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-import router, { RouteNames } from '../router';
+import router from '../router';
 import links from './links';
 import logo from './logo.svg';
 import { useLayoutStore } from './store';
@@ -46,7 +46,7 @@ onMounted(() => {
 <template>
   <div :class="['layout-mobile-sidebar', { open: store.isMobileSidebarOpen }]">
     <div class="header">
-      <router-link :to="{ name: RouteNames.HOME }">
+      <router-link :to="{ name: 'home' }">
         <img class="logo" :src="logo" :alt="$t('layout.logoAltText')" />
       </router-link>
       <span

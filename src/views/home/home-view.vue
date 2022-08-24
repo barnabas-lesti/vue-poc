@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="view-home">
+  <div class="home-view">
     <h1>Home</h1>
     <h2>Consectetur adipiscing elit</h2>
     <p>
@@ -40,7 +40,7 @@
 </template>
 
 <style scoped lang="scss">
-.view-home {
+.home-view {
   p {
     text-align: justify;
   }

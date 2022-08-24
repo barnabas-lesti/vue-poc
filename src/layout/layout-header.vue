@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouteNames } from '../router';
 import logo from './logo.svg';
 import { useLayoutStore } from './store';
 
@@ -13,7 +12,7 @@ const store = useLayoutStore();
       @click="store.openMobileSidebar()"
       >menu</span
     >
-    <router-link :to="{ name: RouteNames.HOME }">
+    <router-link :to="{ name: 'home' }">
       <img class="logo" :src="logo" :alt="$t('layout.logoAltText')" />
     </router-link>
   </header>

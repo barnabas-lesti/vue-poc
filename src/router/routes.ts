@@ -1,18 +1,5 @@
-import type { RouteRecordRaw } from 'vue-router';
+import { homeRoutes } from '../views/home';
+import { notFoundRoutes } from '../views/not-found';
+import type { Route } from './types';
 
-import ViewHome from '../views/view-home.vue';
-import ViewNotFound from '../views/view-not-found.vue';
-import RouteNames from './route-names';
-
-export default [
-  {
-    path: '/',
-    name: RouteNames.HOME,
-    component: ViewHome,
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    name: RouteNames.NOT_FOUND,
-    component: ViewNotFound,
-  },
-] as RouteRecordRaw[];
+export default [...homeRoutes, ...notFoundRoutes] as Route[];
