@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-import logo from '../../assets/logo.svg';
-import router, { navigationLinks, RouteNames } from '../../router';
-import { useCommonStore } from '../../stores/common';
+import router, { RouteNames } from '../router';
+import links from './links';
+import logo from './logo.svg';
+import { useLayoutStore } from './store';
 
-const commonStore = useCommonStore();
+const store = useLayoutStore();
 
 /**
  * Class to apply to the body to prevent scroll.
@@ -17,7 +18,7 @@ const noScrollClassName = 'no-scroll';
  */
 function subscribeToRouteChange() {
   router.beforeEach(() => {
-    commonStore.closeMobileSidebar();
+    store.closeMobileSidebar();
     return true;
   });
 }
@@ -27,7 +28,7 @@ function subscribeToRouteChange() {
  * apply scroll prevention to the page body.
  */
 function subscribeToIsMobileSidebarOpen() {
-  commonStore.$subscribe((mutation, state) => {
+  store.$subscribe((mutation, state) => {
     if (state.isMobileSidebarOpen) {
       document.body.classList.add(noScrollClassName);
     } else {
@@ -43,25 +44,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    :class="[
-      'layout-mobile-sidebar',
-      { open: commonStore.isMobileSidebarOpen },
-    ]"
-  >
+  <div :class="['layout-mobile-sidebar', { open: store.isMobileSidebarOpen }]">
     <div class="header">
       <router-link :to="{ name: RouteNames.HOME }">
-        <img class="logo" :src="logo" :alt="$t('mobileSidebar.logoAltText')" />
+        <img class="logo" :src="logo" :alt="$t('layout.logoAltText')" />
       </router-link>
       <span
         class="close-icon material-icons"
-        @click="commonStore.closeMobileSidebar()"
+        @click="store.closeMobileSidebar()"
         >close</span
       >
     </div>
     <div class="content">
       <router-link
-        v-for="(link, index) of navigationLinks"
+        v-for="(link, index) of links"
         :key="index"
         :to="{ name: link.name }"
         class="link"

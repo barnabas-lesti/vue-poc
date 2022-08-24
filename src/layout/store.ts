@@ -2,9 +2,9 @@ import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
 /**
- * Common store factory function.
+ * Layout store factory function.
  */
-export const useCommonStore = defineStore('common', () => {
+export const useLayoutStore = defineStore('layout', () => {
   /**
    * Open state indicator for the mobile sidebar.
    */

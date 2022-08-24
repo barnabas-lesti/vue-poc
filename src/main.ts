@@ -5,7 +5,7 @@ import App from './app.vue';
 import router from './router';
 import i18n from './i18n';
 
-import './assets/main.scss';
+import './main.scss';
 
 const app = createApp(App);
 
