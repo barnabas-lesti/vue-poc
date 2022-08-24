@@ -4,7 +4,7 @@ import NotFoundView from './not-found-view.vue';
 export default [
   {
     path: '/:pathMatch(.*)*',
-    name: 'notFound',
+    name: 'not-found',
     component: NotFoundView,
   },
 ] as Route[];

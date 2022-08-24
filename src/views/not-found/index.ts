@@ -1,1 +1,2 @@
-export { default as notFoundRoutes } from './routes';
+export { default as notFoundViewRoutes } from './routes';
+export { default as notFoundViewMessages } from './messages.yaml';

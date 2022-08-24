@@ -2,7 +2,7 @@
 
 <template>
   <div class="home-view">
-    <h1>Home</h1>
+    <h1>{{ $t('views.home.title') }}</h1>
     <h2>Consectetur adipiscing elit</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut lorem

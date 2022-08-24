@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="not-found-view">
-    <h1>{{ $t('views.notFound.title') }}</h1>
+  <div class="template-syntax-view">
+    <h1>{{ $t('views.templateSyntax.title') }}</h1>
   </div>
 </template>
 
