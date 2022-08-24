@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="view-not-found">view-not-found</div>
+  <div class="not-found-view">not-found-view</div>
 </template>
 
 <style scoped lang="scss"></style>

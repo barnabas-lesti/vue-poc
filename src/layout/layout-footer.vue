@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import logo from '../../assets/logo.svg';
-import { RouteNames } from '../../router';
+import logo from './logo.svg';
 </script>
 
 <template>
   <footer class="layout-footer">
-    <router-link :to="{ name: RouteNames.HOME }">
-      <img class="logo" :src="logo" :alt="$t('footer.logoAltText')" />
+    <router-link :to="{ name: 'home' }">
+      <img class="logo" :src="logo" :alt="$t('layout.logoAltText')" />
     </router-link>
     <div class="copyright">
-      {{ $t('footer.copyright') }}
+      {{ $t('layout.copyright') }}
     </div>
   </footer>
 </template>

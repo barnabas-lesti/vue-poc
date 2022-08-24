@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import logo from '../../assets/logo.svg';
-import { RouteNames } from '../../router';
-import { useCommonStore } from '../../stores/common';
+import logo from './logo.svg';
+import { useLayoutStore } from './store';
 
-const commonStore = useCommonStore();
+const store = useLayoutStore();
 </script>
 
 <template>
   <header class="layout-header">
     <span
       class="mobile-sidebar-icon material-icons"
-      @click="commonStore.openMobileSidebar()"
+      @click="store.openMobileSidebar()"
       >menu</span
     >
-    <router-link :to="{ name: RouteNames.HOME }">
-      <img class="logo" :src="logo" :alt="$t('header.logoAltText')" />
+    <router-link :to="{ name: 'home' }">
+      <img class="logo" :src="logo" :alt="$t('layout.logoAltText')" />
     </router-link>
   </header>
 </template>

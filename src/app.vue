@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import LayoutFooter from './components/layout/layout-footer.vue';
-import LayoutHeader from './components/layout/layout-header.vue';
-import LayoutMobileSidebar from './components/layout/layout-mobile-sidebar.vue';
+import { LayoutFooter, LayoutHeader, LayoutMobileSidebar } from './layout';
 </script>
 
 <template>
