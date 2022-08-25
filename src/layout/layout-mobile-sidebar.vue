@@ -2,6 +2,7 @@
 import { onMounted } from 'vue';
 
 import router from '../router';
+import LayoutMobileSidebarLinks from './layout-mobile-sidebar-links.vue';
 import links from './links';
 import logo from './logo.svg';
 import { useLayoutStore } from './store';
@@ -55,15 +56,9 @@ onMounted(() => {
         >close</span
       >
     </div>
+
     <div class="content">
-      <router-link
-        v-for="(link, index) of links"
-        :key="index"
-        :to="{ name: link.name }"
-        class="link"
-        activeClass="active"
-        >{{ $t(link.labelKey) }}</router-link
-      >
+      <layout-mobile-sidebar-links :links="links" />
     </div>
   </div>
 </template>
@@ -103,19 +98,6 @@ onMounted(() => {
 
   .content {
     padding: 1rem;
-  }
-
-  .link {
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 1rem;
-    color: #555;
-    font-size: 1.2rem;
-  }
-
-  .active {
-    color: #222;
   }
 
   &.open {
