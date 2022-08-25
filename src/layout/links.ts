@@ -2,11 +2,25 @@
  * Available navigation links.
  */
 export default [
-  { name: 'home', labelKey: 'views.home.title' },
-  { name: 'template-syntax', labelKey: 'views.templateSyntax.title' },
-] as Link[];
+  { routeName: 'home', labelKey: 'layout.mobileSidebar.links.home' },
+  {
+    labelKey: 'layout.mobileSidebar.links.essentials',
+    subLinks: [
+      {
+        routeName: 'template-syntax',
+        labelKey: 'layout.mobileSidebar.links.templateSyntax',
+      },
+    ],
+  },
+] as MobileSidebarLink[];
 
-type Link = {
-  name: string;
+export type MobileSidebarLink = {
   labelKey: string;
+  routeName?: string;
+  subLinks?: MobileSidebarSubLink[];
+};
+
+type MobileSidebarSubLink = {
+  labelKey: string;
+  routeName: string;
 };
