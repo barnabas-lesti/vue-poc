@@ -2,6 +2,7 @@ en:
   layout.copyright:   Copyright © 2022 Barnabas Lesti.
   layout.logoAltText: Brand logo
 
-  layout.mobileSidebar.links.home:           Home
-  layout.mobileSidebar.links.essentials:     Essentials
-  layout.mobileSidebar.links.templateSyntax: Template Syntax
+  layout.mobileSidebar.links.home:                   Home
+  layout.mobileSidebar.links.essentials:             Essentials
+  layout.mobileSidebar.links.templateSyntax:         Template Syntax
+  layout.mobileSidebar.links.reactivityFundamentals: Reactivity Fundamentals

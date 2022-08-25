@@ -10,6 +10,10 @@ export default [
         routeName: 'template-syntax',
         labelKey: 'layout.mobileSidebar.links.templateSyntax',
       },
+      {
+        routeName: 'reactivity-fundamentals',
+        labelKey: 'layout.mobileSidebar.links.reactivityFundamentals',
+      },
     ],
   },
 ] as MobileSidebarLink[];
