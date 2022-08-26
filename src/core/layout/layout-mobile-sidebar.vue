@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
+import { mobileSidebarLinks } from '../navigation';
 import router from '../router';
 import LayoutMobileSidebarLinks from './layout-mobile-sidebar-links.vue';
-import links from './links';
 import logo from './logo.svg';
 import { useLayoutStore } from './store';
 
@@ -58,7 +58,7 @@ onMounted(() => {
     </div>
 
     <div class="content">
-      <layout-mobile-sidebar-links :links="links" />
+      <layout-mobile-sidebar-links :links="mobileSidebarLinks" />
     </div>
   </div>
 </template>

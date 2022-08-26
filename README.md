@@ -2,36 +2,58 @@
 
 Example Vue 3 application to test the framework features.
 
-## Project Setup
+## Development
 
-### Install dependencies
 ```sh
+# Install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-```sh
+# Compile and Hot-Reload for Development
 npm run dev
-```
 
-### Run Unit Tests
-```sh
+# Run Unit Tests
 TBD
-```
 
-### Lint
-```sh
+# Lint
 npm run lint
-```
 
-### Type-Check, Compile and Minify for Production
-```sh
+# Type-Check, Compile and Minify for Production
 npm run build
+
+# Start a production server
+npm run prod
 ```
 
-### Start a production server (after the above)
-```sh
-npm run prod
+## Features
+- The application is organized on a feature level:
+  - **Core (single use)** features like `router`, `i18n`, etc. are located in the `./src/core` folder.
+  - **Common (reusable)** features/components like `inputs`, `cards`, etc. are in the `./src/common` folder.
+  - **Views** are in the `./src/views` folder and are loaded using the `index.ts` file located in the root of the directory.
+- New messages can be added by creating a `messages.yaml` file and registering it with the `registerMessages` function:
+```ts
+import { registerMessages } from '@/core/i18n';
+import messages from './messages.yaml';
+
+registerMessages(messages);
+```
+- New routes can be registered with the help of the `registerRoutes` function:
+```ts
+import { registerRoutes } from '@/core/router';
+import ViewHome from './view-home.vue';
+
+registerRoutes([
+  {
+    path: '/',
+    name: 'home',
+    component: ViewHome,
+  },
+]);
+```
+- Links to the navigation displays can be added with the `registerNavigationLinks` function:
+```ts
+import { registerNavigationLinks } from '@/core/navigation';
+
+registerNavigationLinks([{ labelKey: 'views.home.title', routeName: 'home' }]);
 ```
 
 ## Recommended IDE Setup
