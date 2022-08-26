@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
-import type { MobileSidebarLink } from './links';
+
+import type { NavigationLink } from '../navigation';
 
 const props = defineProps({
   /**
    * Links to render.
    */
   links: {
-    type: Array as PropType<MobileSidebarLink[]>,
+    type: Array as PropType<NavigationLink[]>,
     required: true,
   },
 });
